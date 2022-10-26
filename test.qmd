@@ -1,0 +1,97 @@
+---
+title: "Example trackdown doc"
+output: 
+  bookdown::word_document2
+---
+
+```{r r-chunk-options, echo=FALSE, warning=FALSE}
+# 
+rm(list=ls())
+
+# WorkingDir = getwd()
+# HomeFile = getwd()
+HomeFile = "C:/Users/nick.tolimieri/Desktop/IEA-Test"
+           
+
+library(knitr) 
+knitr::opts_chunk$set(
+  root.dir = HomeFile,
+  fig.path = paste0(HomeFile,'/Figures/'),
+  #fig.path = paste0(HomeFile,'/Figures_JPGs/'),
+  # fig.path = paste0(HomeFile,'/TechMemoFigs/'),
+  cache.path = 'cache/graphics-', 
+  echo=FALSE,
+  include = TRUE,
+  # dev='jpeg',
+  dev='png',
+  dpi=300,
+  warning=FALSE
+  )
+
+fig.loc = paste0(HomeFile,'/Figures/')
+text.loc = paste0(HomeFile,'/Text_Files/')
+```
+
+```{r upload.download, eval=FALSE}
+
+# I added these commands here for convenience. Don't run them as part of the rmd (hence eval=FALSE)
+# They upload, update, and download the rmd file to the google drive.  
+# there are other options render and add both the rmd and docx (or pdf file) at the same time.
+
+
+trackdown::upload_file(file = paste0(HomeFile,"/test.code.Rmd"),
+                       gpath = "_00_IEA-TEST/", hide_code = TRUE)
+ 
+trackdown::update_file(file = paste0(HomeFile,"/test.code.Rmd"), 
+                        gpath = "_00_IEA-TEST/", hide_code = TRUE)
+ 
+trackdown::download_file(file = paste0(HomeFile,"/test.code.Rmd"),
+                          gpath = "_00_IEA-TEST/")
+
+```
+
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus.
+
+# INTRODUCTION
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+```{r box-1}
+
+include_graphics( paste0(fig.loc,'ESR Infographic.Landscape.png' ))
+```
+
+## SAMPLING LOCATIONS
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+```{r sampling-areas, fig.cap="The California Current Ecosystem (CCE). (a) Sampling areas for oceanographic data (dotted transect lines) and biological data (shaded areas). Solid box = core sampling area for forage in the Central CCE. Dotted box approximates foraging area for adult female California sea lions from the San Miguel colony. (b) Freshwater ecoregions in the CCE."}
+
+include_graphics( paste0(fig.loc,'sampling area maps.png' ))
+```
+
+## ANOTHER CHAPTER
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+# YET ANOTHER
+
+*Lorem ipsum dolor sit amet*, consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+## AND MORE
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+```{r basin-scale, fig.cap="Monthly values of the Oceanic Niño Index (ONI), Pacific Decadal Oscillation (PDO), and North Pacific Gyre Oscillation (NPGO) from 1990-2021, relative to the mean (dashed line) ±1 s.d. (blue lines) from 1990-2019. The blue shaded area is the most recent 5 years of data. Arrows indicate if the recent 5-year trend is positive (↗), neutral (→), or negative (↘). Symbols indicate if the recent 5-year mean is above the upper blue line (+), within the blue lines (●), or below the lower blue line (−)."}
+
+include_graphics( paste0(fig.loc,'basin_scale_climate-1.png' ))
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+
+Proin volutpat elit suscipit, placerat ligula ac, rutrum erat. Maecenas nec elit eu purus tristique finibus. Pellentesque pretium nisi et ullamcorper ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum in ligula in mi accumsan pellentesque at accumsan turpis. Nam lorem nisi, ultricies ut condimentum quis, pharetra nec metus. Cras eleifend auctor enim, ac faucibus sem facilisis vel.
+
+# THE END
