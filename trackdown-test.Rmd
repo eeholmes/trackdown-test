@@ -16,18 +16,18 @@ knitr::opts_chunk$set(
 ```
 
 ```{r upload.download, eval=FALSE}
-
-# I added these commands here for convenience. Don't run them as part of the rmd (hence eval=FALSE)
-# They upload, update, and download the rmd file to the google drive.  
-# there are other options render and add both the rmd and docx (or pdf file) at the same time.
-
-trackdown::upload_file(file = here::here("trackdown-test.Rmd"),
+# Run these in the console; not as part of your R Markdown
+# Add your file the first time
+trackdown::upload_file(file = here::here("test.Rmd"),
                        gpath = "_00_TRACKDOWN/", hide_code = TRUE)
- 
-trackdown::download_file(file = here::here("trackdown-test.Rmd"),
+
+# Do some collaborative editing on GoogleDrive and then download the changes
+# Make sure to Accept the change on GoogleDrive. If they are just "suggestions", they won't be pulled down.
+trackdown::download_file(file = here::here("test.Rmd"),
                           gpath = "_00_TRACKDOWN/")
 
-trackdown::update_file(file = here::here("trackdown-test.Rmd"), 
+# If you make local changes to the Rmd and want to push up to GoogleDrive then use this
+trackdown::update_file(file = here::here("test.Rmd"), 
                         gpath = "_00_TRACKDOWN/", hide_code = TRUE)
 ```
 
