@@ -18,16 +18,16 @@ knitr::opts_chunk$set(
 ```{r upload.download, eval=FALSE}
 # Run these in the console; not as part of your R Markdown
 # Add your file the first time
-trackdown::upload_file(file = here::here("test.Rmd"),
+trackdown::upload_file(file = here::here("trackdown-test.Rmd"),
                        gpath = "_00_TRACKDOWN/", hide_code = TRUE)
 
 # Do some collaborative editing on GoogleDrive and then download the changes
 # Make sure to Accept the change on GoogleDrive. If they are just "suggestions", they won't be pulled down.
-trackdown::download_file(file = here::here("test.Rmd"),
+trackdown::download_file(file = here::here("trackdown-test.Rmd"),
                           gpath = "_00_TRACKDOWN/")
 
 # If you make local changes to the Rmd and want to push up to GoogleDrive then use this
-trackdown::update_file(file = here::here("test.Rmd"), 
+trackdown::update_file(file = here::here("trackdown-test.Rmd"), 
                         gpath = "_00_TRACKDOWN/", hide_code = TRUE)
 ```
 
