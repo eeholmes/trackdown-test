@@ -6,16 +6,13 @@ title: "Example trackdown doc"
 library(knitr) 
 knitr::opts_chunk$set(
   root.dir = here::here(),
-  fig.path = here::here("images"),
-  cache.path = 'cache/graphics-', 
+  fig.path = here::here("images//"),
   echo=FALSE,
   include = TRUE,
   dev='png',
   dpi=300,
   warning=FALSE
   )
-
-fig.loc = here::here("images")
 ```
 
 ```{r upload.download, eval=FALSE}
@@ -24,15 +21,14 @@ fig.loc = here::here("images")
 # They upload, update, and download the rmd file to the google drive.  
 # there are other options render and add both the rmd and docx (or pdf file) at the same time.
 
-
-trackdown::upload_file(file = here::here("test.code.Rmd"),
-                       gpath = "_00_IEA-TEST/", hide_code = TRUE)
+trackdown::upload_file(file = here::here("test.Rmd"),
+                       gpath = "_00_TRACKDOWN/", hide_code = TRUE)
  
-trackdown::update_file(file = here::here("test.code.Rmd"), 
-                        gpath = "_00_IEA-TEST/", hide_code = TRUE)
+trackdown::update_file(file = here::here("test.Rmd"), 
+                        gpath = "_00_TRACKDOWN/", hide_code = TRUE)
  
-trackdown::download_file(file = here::here("test.code.Rmd"),
-                          gpath = "_00_IEA-TEST/")
+trackdown::download_file(file = here::here("test.Rmd"),
+                          gpath = "_00_TRACKDOWN/")
 
 ```
 
@@ -41,7 +37,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum ipsum vel er
 
 # INTRODUCTION
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
+Changes in intro., consectetur adipiscing elit. Sed dictum ipsum vel erat lobortis, et rhoncus sapien luctus. Aenean volutpat, tortor ac sodales malesuada, ex libero accumsan lectus, a pretium risus purus eu felis. Donec nec fringilla dolor. Pellentesque sagittis mi sit amet nibh sollicitudin, in commodo enim cursus. Proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
 
 @fig-seals proin ac dolor nunc. Mauris consectetur magna at ligula cursus facilisis. Fusce pulvinar lacus nec erat vestibulum, sed tincidunt arcu feugiat. Maecenas eget magna sed nunc molestie placerat id at ligula. Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel.
 
@@ -60,7 +56,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum ipsum vel er
 #| label: fig-plot
 #| fig-cap: "Duis pharetra, ligula vel hendrerit tincidunt, orci dui elementum neque, eu efficitur sem turpis sed leo. Vestibulum volutpat augue tortor, eget vestibulum leo lacinia vel."
 
-include_graphics(here::here("images", "plot.png"))
+plot(1:11)
 ```
 
 ## ANOTHER CHAPTER
